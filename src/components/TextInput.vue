@@ -14,7 +14,10 @@
 export default {
   name: 'TextInput',
   props: {
-    feedback: String
+    feedback: {
+      type: String,
+      required: true
+    }
   },
   data: function () {
     return {

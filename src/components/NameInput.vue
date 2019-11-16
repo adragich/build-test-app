@@ -15,7 +15,10 @@
 export default {
   name: 'NameInput',
   props: {
-    name: String
+    name: {
+      type: String,
+      required: true
+    }
   },
   data: function () {
     return {

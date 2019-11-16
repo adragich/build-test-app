@@ -12,9 +12,6 @@
 <script>
 export default {
   name: 'SubmitButton',
-  props: {
-    msg: String
-  },
 }
 </script>
 

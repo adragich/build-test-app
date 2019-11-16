@@ -27,7 +27,7 @@
       <hr>
 
       <p>
-       Feedback: {{ feedback }}
+        Feedback: {{ feedback }}
       </p>
     </div>
   </div>
@@ -41,7 +41,7 @@ import SubmitButton from './components/SubmitButton.vue';
 import { mapState, mapActions, mapMutations } from 'vuex';
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     NameInput,
     TextInput,

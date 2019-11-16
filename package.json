@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "eslint 'src/**/*.vue' 'src/**/*.js'",
-    "test:unit": "npx jest -c jest.config.js"
+    "test:unit": "npx jest -c jest.config.js",
+    "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js -c jest.config.js --no-cache --runInBand"
   },
   "dependencies": {
     "core-js": "^3.3.2",
@@ -16,7 +17,10 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-service": "^4.0.0",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
     "buble": "^0.19.8",
     "buble-jest": "^1.0.1",
     "eslint": "^6.6.0",
