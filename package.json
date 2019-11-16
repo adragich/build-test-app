@@ -8,7 +8,9 @@
     "lint": "eslint 'src/**/*.vue' 'src/**/*.js'",
     "test:unit": "npx jest -c jest.config.js",
     "test:unit:update": "npx jest -c jest.config.js --updateSnapshot",
-    "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js -c jest.config.js --no-cache --runInBand"
+    "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js -c jest.config.js --no-cache --runInBand",
+    "test:e2e": "nightwatch --config e2e/nightwatch.conf.js --env chrome",
+    "test": "npm run lint && npm run test:unit && npm run test:e2e"
   },
   "dependencies": {
     "core-js": "^3.3.2",
@@ -24,6 +26,7 @@
     "babel-jest": "^24.9.0",
     "buble": "^0.19.8",
     "buble-jest": "^1.0.1",
+    "chromedriver": "^78.0.1",
     "eslint": "^6.6.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
@@ -33,6 +36,8 @@
     "eslint-plugin-vue": "^6.0.1",
     "firebase": "^7.4.0",
     "jest": "^24.9.0",
+    "nightwatch": "^1.2.4",
+    "selenium-server": "^3.141.59",
     "vue-jest": "^3.0.5",
     "vue-template-compiler": "^2.6.10"
   },
