@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
             failures="0"
-            tests="1">
+            tests="2">
 
   <testsuite name="critical"
     errors="0" failures="0" hostname="" id="" package="critical" skipped="0"
-    tests="1" time="1.224" timestamp="">
+    tests="2" time="3.570" timestamp="">
   
-    <testcase name="sanity test" classname="critical" time="1.224" assertions="1">
+    <testcase name="cannot submit an empty form" classname="critical" time="1.344" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="submit form shows &#34;thank you&#34; view" classname="critical" time="2.226" assertions="2">
+
+    
 
     
     </testcase>

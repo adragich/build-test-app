@@ -9,7 +9,7 @@ exports[`TextInput.vue renders button correctly 1`] = `
     class="build-test__button-text"
   >
     
-    	Let it go!
+      Let it go!
     
   </span>
 </button>

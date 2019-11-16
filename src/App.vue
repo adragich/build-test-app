@@ -37,7 +37,10 @@
         </p>
       </div>
     </template>
-    <div v-else>
+    <div
+      v-else
+      id="thank_you"
+    >
       <h2 class="build-test-u-white-color build-test__title">
         Thanks a lot!
         <br>
