@@ -1,11 +1,12 @@
 <template>
-  <div class="build-test__input">
-    <label>
+  <div class="build-test-u-flex-column build-test-u-spacer">
+    <label class="build-test__input-label build-test-u-spacer build-test-u-lightgrey-color">
       Kindly asking you to provide your name
     </label>
     <input
       v-model="innerValue"
       type="text"
+      class="build-test__input build-test-u-spacer"
       @input="$emit('input', $event.target.value)"
     >
   </div>
@@ -30,4 +31,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .build-test__input {
+    border: 1px solid #dfdfdf;
+    line-height: 32px;
+    width: 280px;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 2px;
+    padding: 0 16px;
+    font-size: 16px;
+  }
 </style>

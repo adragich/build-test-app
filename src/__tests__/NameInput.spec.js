@@ -22,4 +22,12 @@ describe('NameInput.vue', () => {
     
     expect(wrapper.emitted('input')).toBeTruthy();
   });
+
+  test('renders textarea item correctly', () => {
+    const wrapper = shallowMount(NameInput, {
+        propsData: { 'name': '' }
+    });
+    
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });

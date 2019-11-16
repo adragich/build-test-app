@@ -7,6 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "eslint 'src/**/*.vue' 'src/**/*.js'",
     "test:unit": "npx jest -c jest.config.js",
+    "test:unit:update": "npx jest -c jest.config.js --updateSnapshot",
     "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js -c jest.config.js --no-cache --runInBand"
   },
   "dependencies": {

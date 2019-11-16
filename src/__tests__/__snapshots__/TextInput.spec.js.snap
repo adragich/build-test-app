@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput.vue renders textarea item correctly 1`] = `
+<div
+  class="build-test-u-flex-column build-test-u-spacer"
+>
+  <label
+    class="build-test-u-spacer build-test-u-lightgrey-color"
+  >
+    
+    Kindly asking you to provide your feedback about the content
+  
+  </label>
+   
+  <textarea
+    class="build-test__textarea build-test-u-spacer"
+  />
+</div>
+`;

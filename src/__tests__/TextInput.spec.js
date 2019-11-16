@@ -22,4 +22,12 @@ describe('TextInput.vue', () => {
     
     expect(wrapper.emitted('input')).toBeTruthy();
   });
+
+  test('renders textarea item correctly', () => {
+    const wrapper = shallowMount(TextInput, {
+        propsData: { 'feedback': '' }
+    });
+    
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });
