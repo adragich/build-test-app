@@ -14,6 +14,7 @@ exports[`NameInput.vue renders textarea item correctly 1`] = `
    
   <input
     class="build-test__input build-test-u-spacer"
+    placeholder="Jhon Doe 😎"
     type="text"
   />
 </div>

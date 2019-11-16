@@ -36,9 +36,10 @@ export default {
     max-width: 100%;
     height: 120px;
     border-radius: 8px;
-    box-shadow: 0 6px 4px;
+    box-shadow: 0 2px 1px;
     padding: 8px 16px;
     font-size: 16px;
+    font-family: inherit;
   }
 
   @media (max-width: 768px) {

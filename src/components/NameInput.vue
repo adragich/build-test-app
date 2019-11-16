@@ -7,6 +7,7 @@
       v-model="innerValue"
       type="text"
       class="build-test__input build-test-u-spacer"
+      placeholder="Jhon Doe 😎"
       @input="$emit('input', $event.target.value)"
     >
   </div>
@@ -37,8 +38,9 @@ export default {
     width: 280px;
     max-width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 2px;
+    box-shadow: 0 2px 1px;
     padding: 0 16px;
     font-size: 16px;
+    font-family: inherit;
   }
 </style>

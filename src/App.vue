@@ -3,34 +3,56 @@
     id="app"
     class="build-test__wrapper"
   >
-    <h2 class="build-test-u-white-color build-test__title">
-      Frontend Developer Love in Eindhoven,
+    <template v-if="showFeedbackForm">
+      <h2 class="build-test-u-white-color build-test__title">
+        Frontend Developer Love in Eindhoven,
+        <br>
+        This is <em>Anastasia Dragich</em> with <em>"Building Test Strategy Topic"</em>...
+      </h2>
+
+      <NameInput
+        :name="postData.name"
+        @input="setName"
+      />
+
+      <TextInput
+        :feedback="postData.feedback"
+        @input="setFeedback"
+      />
+
+      <SubmitButton
+        :disabled="isSubmitButtonDisabled"
+        @submit="sendFeedback"
+      />
+
+      <div v-if="isRequestVisible">
+        <h3>
+          Guest name: {{ postData.name }}
+        </h3>
+
+        <hr>
+
+        <p>
+          Feedback: {{ postData.feedback }}
+        </p>
+      </div>
+    </template>
+    <div v-else>
+      <h2 class="build-test-u-white-color build-test__title">
+        Thanks a lot!
+        <br>
+        <em>Anastasia Dragich</em> appreciates your input
+      </h2>
+
       <br>
-      This is <em>Anastasiia Dragich</em> with <em>"Building Test Strategy Topic"</em>...
-    </h2>
 
-    <NameInput
-      :name="name"
-      @input="setName"
-    />
-
-    <TextInput
-      :feedback="feedback"
-      @input="setFeedback"
-    />
-
-    <SubmitButton @submit="showRequest" />
-
-    <div v-if="isRequestVisible">
-      <h3>
-        Guest name: {{ name }}
-      </h3>
-
-      <hr>
-
-      <p>
-        Feedback: {{ feedback }}
-      </p>
+      <div class="build-test-u-flex-column">
+        <img
+          class="build-test-app__image"
+          :src="require(`./assets/thank${randomNumber}.gif`)"
+          alt="Thank you!"
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -39,8 +61,9 @@
 import NameInput from './components/NameInput.vue';
 import TextInput from './components/TextInput.vue';
 import SubmitButton from './components/SubmitButton.vue';
+import { sendFeedback } from './api/api';
 
-import { mapState, mapActions, mapMutations } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
   name: 'App',
@@ -49,21 +72,34 @@ export default {
     TextInput,
     SubmitButton
   },
+  data: function() {
+    return {
+      showFeedbackForm: true
+    };
+  },
   computed: {
     ...mapState([
-      'name',
-      'feedback',
+      'postData',
       'isRequestVisible'
     ]),
+    isSubmitButtonDisabled() {
+      return !this.postData.feedback;
+    },
+    randomNumber() {
+      return Math.floor(Math.random() * Math.floor(9));
+    }
   },
   methods: {
-    ...mapActions([
-      'showRequest',
-    ]),
     ...mapMutations([
       'setName',
       'setFeedback',
     ]),
+    sendFeedback() {
+      sendFeedback(this.postData).then(this.showThankYou);
+    },
+    showThankYou() {
+      this.showFeedbackForm = false;
+    }
   }
 
 }
@@ -103,6 +139,9 @@ body {
 }
 .build-test-u-white-color {
   color: white;
+}
+.build-test-app__image {
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {

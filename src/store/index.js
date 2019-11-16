@@ -5,25 +5,24 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    name: '',
-    feedback: '',
+    postData: {
+        name: '',
+        feedback: '',
+    },
     isRequestVisible: false
   },
   mutations: {
     setName(state, name) {
-      state.name = name;
+      state.postData.name = name;
     },
     setFeedback(state, feedback) {
-      state.feedback = feedback;
+      state.postData.feedback = feedback;
     },
     showRequest(state) {
       state.isRequestVisible = true;
     },
   },
   actions: {
-    showRequest({ commit }) {
-      commit('showRequest');
-    }
   },
   modules: {
   }
